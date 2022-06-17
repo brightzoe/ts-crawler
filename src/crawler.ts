@@ -23,8 +23,5 @@ class Crawler {
     return res.text;
   }
 }
-const secret = "secretKey";
-const url = `http://www.dell-lee.com/typescript/demo.html?secret=${secret}`;
-// const url = "https://voice.baidu.com/act/newpneumonia/newpneumonia#tab0";
-const analyzer = CourseAnalyzer.getInstance();
-const crawler = new Crawler(url, analyzer);
+
+export default Crawler;
