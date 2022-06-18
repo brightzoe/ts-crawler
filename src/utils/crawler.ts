@@ -6,7 +6,7 @@ export interface Analyzer {
   analyze: (html: string, path: string) => string;
 }
 class Crawler {
-  private filePath = path.resolve(__dirname, "../data/course.json");
+  private filePath = path.resolve(__dirname, "../../data/course.json");
 
   constructor(private url: string, private analyzer: Analyzer) {
     this.initSpiderProcess();
