@@ -1,7 +1,6 @@
 import * as superagent from "superagent";
 import * as fs from "fs";
 import * as path from "path";
-import CourseAnalyzer from "./courseAnalyzer";
 
 export interface Analyzer {
   analyze: (html: string, path: string) => string;

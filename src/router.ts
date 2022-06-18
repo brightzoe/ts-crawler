@@ -1,10 +1,10 @@
 import { Router, Request, Response } from "express";
 import fs from "fs";
 import path from "path";
-import Crawler from "./crawler";
-import CourseAnalyzer from "./courseAnalyzer";
+import Crawler from "./utils/crawler";
+import Analyzer from "./utils/analyzer";
 
-interface RequestWithBody extends Request {
+interface BodyRequest extends Request {
   body: {
     [key: string]: string | undefined;
   };
@@ -59,13 +59,13 @@ router.get("/logout", (req: Request, res: Response) => {
   res.redirect("/");
 });
 
-router.get("/getdata", (req: RequestWithBody, res) => {
+router.get("/getdata", (req: BodyRequest, res) => {
   const isLogin = req.session?.isLogin ?? false;
   if (isLogin) {
     const secret = "secretKey";
     const url = `http://www.dell-lee.com/typescript/demo.html?secret=${secret}`;
     // const url = "https://voice.baidu.com/act/newpneumonia/newpneumonia#tab0";
-    const analyzer = CourseAnalyzer.getInstance();
+    const analyzer = Analyzer.getInstance();
     const crawler = new Crawler(url, analyzer);
     res.send("get data success");
   } else {
