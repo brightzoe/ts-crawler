@@ -49,7 +49,7 @@ class CourseAnalyzer implements Analyzer {
   }
 
   private generateJson(courseInfo: CourseResult, filePath: string) {
-    console.log("course", courseInfo);
+    // console.log("course", courseInfo);
     let fileContent: Content = {};
     if (fs.existsSync(filePath)) {
       fileContent = JSON.parse(fs.readFileSync(filePath, "utf-8"));

@@ -18,6 +18,7 @@ TypeScript + Node + React
   - [development environment - How to watch and reload ts-node when TypeScript files change - Stack Overflow](https://stackoverflow.com/questions/37979489/how-to-watch-and-reload-ts-node-when-typescript-files-change)
 - 并行执行命令 [concurrently - npm](https://www.npmjs.com/package/concurrently)
 - parcel 0 配置的打包工具
+- cookie-session node 保存登录状态
 
 ## 遇到的问题
 
